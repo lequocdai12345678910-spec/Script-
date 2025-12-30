@@ -10,8 +10,6 @@ local v2 = vu1:CreateWindow({
     ["MinimizeKey"] = Enum.KeyCode.LeftControl
 })
 local vu3 = {
-    ["Info"] = v2:AddTab({
-        ["Title"] = "Tab Information"
     }),
     ["Main"] = v2:AddTab({
         ["Title"] = "Tab Framing"
