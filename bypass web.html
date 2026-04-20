@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leon Bypass - Delta Key & Adlink</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0a0f1c, #1a2338);
+            color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(15, 23, 42, 0.95);
+            max-width: 780px;
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            padding: 35px 40px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .subtitle { margin: 12px 0 0; font-size: 1.25rem; color: #dbeafe; }
+        .main { padding: 50px 40px; }
+        input {
+            width: 100%;
+            padding: 20px 24px;
+            font-size: 1.15rem;
+            background: #1e2937;
+            border: 2px solid #334155;
+            border-radius: 16px;
+            color: white;
+            margin-bottom: 25px;
+        }
+        input:focus { border-color: #60a5fa; box-shadow: 0 0 0 4px rgba(96,165,250,0.2); }
+        button {
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            margin: 8px;
+        }
+        .primary { background: linear-gradient(90deg, #3b82f6, #60a5fa); color: white; }
+        .primary:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(59,130,246,0.4); }
+        .service { background: #334155; color: #cbd5e1; }
+        .service:hover { background: #475569; color: white; }
+        .note {
+            margin-top: 30px;
+            padding: 20px;
+            background: #1e2937;
+            border-radius: 16px;
+            font-size: 1.05rem;
+        }
+        footer { padding: 25px; text-align: center; opacity: 0.75; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚡ Leon Bypass</h1>
+            <p class="subtitle">Bypass Key Delta Executor • Linkvertise • Lootdest • Lootlabs</p>
+        </div>
+        <div class="main">
+            <input type="text" id="linkInput" placeholder="Dán link key Delta (Linkvertise / Lootdest / Lootlink) vào đây..." autocomplete="off">
+
+            <div style="text-align:center;">
+                <button class="primary" onclick="bypassDelta()">🚀 Bypass Key Delta Ngay</button>
+            </div>
+
+            <div style="margin-top:40px; text-align:center;">
+                <p style="margin-bottom:15px; font-weight:500;">Hoặc chọn bypasser chuyên dụng:</p>
+                <button class="service" onclick="useService('https://bypass.vip/?bypass=')">Bypass.vip (Tốt nhất)</button>
+                <button class="service" onclick="useService('https://keybypass.net/')">Keybypass.net (Chuyên Delta)</button>
+            </div>
+
+            <div class="note">
+                <strong>Hướng dẫn nhanh cho Delta:</strong><br>
+                1. Mở Delta → Receive Key → copy link<br>
+                2. Dán vào đây → Bypass<br>
+                3. Copy key/link mới → dán lại vào Delta<br><br>
+                <strong>Lưu ý:</strong> Key thường hết hạn sau 24h, phải bypass lại. Tránh click link lạ để tránh virus.
+            </div>
+        </div>
+        <footer>
+            Leon Bypass © 2026 • Dùng cho mục đích cá nhân • Không chịu trách nhiệm nếu link die
+        </footer>
+    </div>
+
+    <script>
+        function bypassDelta() {
+            let url = document.getElementById('linkInput').value.trim();
+            if (!url) {
+                alert("Dán link key Delta vào trước bro!");
+                return;
+            }
+            // Ưu tiên Bypass.vip cho Delta key
+            window.open(`https://bypass.vip/?bypass=${encodeURIComponent(url)}`, '_blank');
+        }
+
+        function useService(base) {
+            let url = document.getElementById('linkInput').value.trim();
+            if (!url) {
+                alert("Dán link trước!");
+                return;
+            }
+            if (base.includes('keybypass.net')) {
+                window.open(base, '_blank'); // Keybypass.net thường cần paste thủ công
+            } else {
+                window.open(`\( {base} \){encodeURIComponent(url)}`, '_blank');
+            }
+        }
+
+        document.getElementById('linkInput').addEventListener('keypress', e => {
+            if (e.key === 'Enter') bypassDelta();
+        });
+    </script>
+</body>
+</html>
